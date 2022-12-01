@@ -16,7 +16,7 @@ namespace AdventOfCode2022Tests.December1
                 "3"
             };
 
-            Assert.AreEqual(6, new December1Problem(inputs).GetCaloriesOfHighestCarryingElf());
+            Assert.AreEqual(6, new December1Problem(inputs).GetLargestAmountOfCaloriesCarriedBySingleElf());
         }
 
         [TestMethod()]
@@ -32,7 +32,7 @@ namespace AdventOfCode2022Tests.December1
                 "6"
             };
 
-            Assert.AreEqual(11, new December1Problem(inputs).GetCaloriesOfHighestCarryingElf());
+            Assert.AreEqual(11, new December1Problem(inputs).GetLargestAmountOfCaloriesCarriedBySingleElf());
         }
     }
 }

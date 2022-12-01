@@ -2,34 +2,40 @@
 
 public class December1Problem
 {
-    private readonly List<int> elfTotalCalories = new() { 0 };
+    private readonly List<Elf> elves = new() { new Elf() };
 
     public December1Problem(string[] input)
     {
-        ParseElvesTotalCalories(input);
+        PreComputeTotalCaloriesCarriedByElf(input);
     }
 
-    public int GetCaloriesOfHighestCarryingElf()
+    public int GetLargestAmountOfCaloriesCarriedBySingleElf()
     {
-        return elfTotalCalories.OrderByDescending(p => p).First();
+        return elves
+            .OrderByDescending(p => p.TotalFoodCaloriesCarried)
+            .First()
+            .TotalFoodCaloriesCarried;
     }
 
-    public int GetCaloriesOfThreeHighestCarryingElves()
+    public int GetLargestAmountOfCaloriesCarriedByThreeElves()
     {
-        return elfTotalCalories.OrderByDescending(p => p).Take(3).Sum();
+        return elves
+            .OrderByDescending(p => p.TotalFoodCaloriesCarried)
+            .Take(3)
+            .Sum(p => p.TotalFoodCaloriesCarried);
     }
 
-    private void ParseElvesTotalCalories(string[] input)
+    private void PreComputeTotalCaloriesCarriedByElf(string[] input)
     {
         foreach (var line in input)
         {
             if (line == string.Empty)
             {
-                elfTotalCalories.Add(0);
+                elves.Add(new Elf());
             }
             else
             {
-                elfTotalCalories[^1] += int.Parse(line);
+                elves[^1].TotalFoodCaloriesCarried += int.Parse(line);
             }
         }
     }
