@@ -29,19 +29,14 @@ var sumOfPriorities = inputs
                         .Sum(Item.GetItemPriority);
 
 Console.WriteLine($"Sum of priorities is {sumOfPriorities}");
-var elfGroups = new List<ElfGroupSacks>();
-var currentElfGroupSacks = new ElfGroupSacks();
 
-for (var i = 0; i < inputs.Length; i++)
-{
-    if (i % 3 == 0)
-    {
-        currentElfGroupSacks = new ElfGroupSacks();
-        elfGroups.Add(currentElfGroupSacks);
-    }
 
-    currentElfGroupSacks.Rucksacks.Add(Rucksack.FromInput(inputs[i]));
-}
+var elfGroups = inputs
+                .Chunk(3)
+                .Select(group => new ElfGroupSacks
+                {
+                    Rucksacks = group.Select(Rucksack.FromInput).ToList()
+                });
 
 var sumOfBadges = elfGroups.Sum(group => Item.GetItemPriority(group.FindGroupBadge()));
 Console.WriteLine($"Sum of badges is {sumOfBadges}");
