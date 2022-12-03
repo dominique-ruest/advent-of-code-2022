@@ -20,32 +20,17 @@
         };
 
 
-        public static readonly Dictionary<RockPaperScissorSelection, Dictionary<RoundOutcome, RockPaperScissorSelection>> SneakyElfInputDesiredOutcomeMappings = new()
+        public static readonly Dictionary<(RockPaperScissorSelection, RoundOutcome), RockPaperScissorSelection> SneakyElfInputDesiredOutcomeMappings = new()
         {
-            {
-                RockPaperScissorSelection.Rock, new Dictionary<RoundOutcome, RockPaperScissorSelection>
-                {
-                    { RoundOutcome.Draw, RockPaperScissorSelection.Rock },
-                    { RoundOutcome.Player2Wins, RockPaperScissorSelection.Paper  },
-                    { RoundOutcome.Player1Wins, RockPaperScissorSelection.Scissor },
-                }
-            },
-            {
-                RockPaperScissorSelection.Paper, new Dictionary<RoundOutcome, RockPaperScissorSelection>
-                {
-                    { RoundOutcome.Player1Wins, RockPaperScissorSelection.Rock },
-                    { RoundOutcome.Draw, RockPaperScissorSelection.Paper },
-                    { RoundOutcome.Player2Wins, RockPaperScissorSelection.Scissor },
-                }
-            },
-            {
-                RockPaperScissorSelection.Scissor, new Dictionary<RoundOutcome, RockPaperScissorSelection>
-                {
-                    { RoundOutcome.Player2Wins, RockPaperScissorSelection.Rock },
-                    { RoundOutcome.Player1Wins, RockPaperScissorSelection.Paper },
-                    { RoundOutcome.Draw, RockPaperScissorSelection.Scissor },
-                }
-            }
+            { (RockPaperScissorSelection.Rock,  RoundOutcome.Draw), RockPaperScissorSelection.Rock },
+            { (RockPaperScissorSelection.Rock,  RoundOutcome.Player2Wins), RockPaperScissorSelection.Paper },
+            { (RockPaperScissorSelection.Rock,  RoundOutcome.Player1Wins), RockPaperScissorSelection.Scissor },
+            { (RockPaperScissorSelection.Paper,  RoundOutcome.Draw), RockPaperScissorSelection.Paper },
+            { (RockPaperScissorSelection.Paper,  RoundOutcome.Player2Wins), RockPaperScissorSelection.Scissor },
+            { (RockPaperScissorSelection.Paper,  RoundOutcome.Player1Wins), RockPaperScissorSelection.Rock },
+            { (RockPaperScissorSelection.Scissor,  RoundOutcome.Draw), RockPaperScissorSelection.Scissor },
+            { (RockPaperScissorSelection.Scissor,  RoundOutcome.Player2Wins), RockPaperScissorSelection.Rock },
+            { (RockPaperScissorSelection.Scissor,  RoundOutcome.Player1Wins), RockPaperScissorSelection.Paper }
         };
     }
 }
