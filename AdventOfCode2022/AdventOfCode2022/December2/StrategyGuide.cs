@@ -30,7 +30,7 @@
 
                 var player1Selection = SneakyElfGuideManual.SneakyElfInputMappings[selections[0]];
                 var player2DesiredOutcome = SneakyElfGuideManual.SneakyElfDesiredOutcomeMappings[selections[1]];
-                var player2Selection = SneakyElfGuideManual.SneakyElfInputDesiredOutcomeMappings[(player1Selection, player2DesiredOutcome)];
+                var player2Selection = GameRoundOutcomeCalculator.GetSelectionForOutcome(player1Selection, player2DesiredOutcome);
 
                 strategyGuide.GameRounds.Add(new GameRound(player1Selection, player2Selection));
             }
