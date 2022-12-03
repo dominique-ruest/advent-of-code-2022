@@ -37,5 +37,10 @@
 
             return strategyGuide;
         }
+
+        internal object Select(Func<object, object> value)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
