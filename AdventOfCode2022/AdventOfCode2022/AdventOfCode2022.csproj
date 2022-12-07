@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.13.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="December1\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
