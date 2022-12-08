@@ -5,6 +5,7 @@ using AdventOfCode2022.December3;
 using AdventOfCode2022.December4;
 using AdventOfCode2022.December5;
 using AdventOfCode2022.December6;
+using AdventOfCode2022.December7;
 
 // DAY 1
 Day1Program.Run();
@@ -26,7 +27,12 @@ Console.WriteLine();
 Day5Program.Run();
 Console.WriteLine();
 
+// DAY 6
 new Day6Program().Run();
+Console.WriteLine();
+
+// DAY 7
+Day7Program.Run();
 Console.WriteLine();
 
 Console.ReadLine();
